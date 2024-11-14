@@ -1,6 +1,7 @@
 package com.mantra.crackoss.entity;
 
 import java.util.Collection;
+import java.util.Collections;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -29,14 +30,39 @@ public class User implements UserDetails{
 	private String password;
 
 	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        // If you have roles/authorities to assign, you can return them here.
+        // For example, if you have roles stored in the database, you would fetch and return them here.
+        // For now, returning an empty collection since authorities are not defined.
+        return Collections.emptyList();
+    }
 
-	@Override
-	public String getUsername() {
-		// TODO Auto-generated method stub
-		return this.email;
-	}
+    @Override
+    public String getUsername() {
+        return this.email;  // Return the email as the username
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        // Return true if account is not expired
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        // Return true if account is not locked
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        // Return true if credentials are not expired
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        // Return true if the user is enabled
+        return true;
+    }
 }

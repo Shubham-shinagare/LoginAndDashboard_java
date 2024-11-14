@@ -48,7 +48,7 @@ public class LoginController {
 	private static final Logger logger = LogManager.getLogger(LoginController.class);
 	
 	
-    @ApiResponses(value = {@ApiResponse(code = 200, response = LoginRequestDTO.class, message = "Login successfully. "),
+    @ApiResponses(value = {@ApiResponse(code = 200, response = JWTResponse.class, message = "Login successfully. "),
 		@ApiResponse(code = 401, response = AstNull.class, message = "authentication failed"),
 		@ApiResponse(code = 403, response = AstNull.class, message = "access not allowed"),
 		@ApiResponse(code = 204, response = AstNull.class, message = "No content")})
@@ -79,7 +79,7 @@ public class LoginController {
 		return "Credential invalid !!!";
     }
 
-	@ApiResponses(value = {@ApiResponse(code = 200, response = LoginRequestDTO.class, message = "Login successfully. "),
+	@ApiResponses(value = {@ApiResponse(code = 200, response = LoginResponseDTO.class, message = "Login successfully. "),
     		@ApiResponse(code = 401, response = AstNull.class, message = "authentication failed"),
     		@ApiResponse(code = 403, response = AstNull.class, message = "access not allowed"),
     		@ApiResponse(code = 204, response = AstNull.class, message = "No content")})

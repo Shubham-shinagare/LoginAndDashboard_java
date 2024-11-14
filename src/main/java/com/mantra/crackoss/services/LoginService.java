@@ -26,10 +26,6 @@ public class LoginService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
-	public LoginResponseDTO CreateLoginUser(LoginRequestDTO loginRequestDTO) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	public ArrayList<LoginResponseDTO> getUsers() {
 		List<User> users = userDetailsRepo.findAll();
